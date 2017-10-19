@@ -112,4 +112,3 @@ function boom() {
   this.textContent = "BOOM!!";
   return asteroid;
 } 
-
