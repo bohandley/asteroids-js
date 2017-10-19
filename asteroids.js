@@ -31,7 +31,6 @@ fetch(url).then(function(response) {
     //Place each asteroid on the page            
     placeAsteroid(hazardous, distance, speed, size);
   });
-  
 });
 
 //This function creates each asteroid,
@@ -110,5 +109,5 @@ function destroyAsteroid(asteroid) {
 //with 'BOOM!!' on a click event
 function boom() {
   this.textContent = "BOOM!!";
-  return asteroid;
+  return this;
 } 
