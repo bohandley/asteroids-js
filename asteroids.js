@@ -1,5 +1,5 @@
 //Choose a date
-var date = "1978-10-15";
+var date = "2017-10-15";
 
 //Get an API key from https://api.nasa.gov/index.html#apply-for-an-api-key
 var key = "yAyH8cJEzor6tU5Kl6iLxnNnqLunMUq9jpy9rES4";
