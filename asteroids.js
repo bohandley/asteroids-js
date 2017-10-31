@@ -1,11 +1,11 @@
 //Choose a date
-var date = "2017-10-15";
+var date = '2017-10-15';
 
 //Get an API key from https://api.nasa.gov/index.html#apply-for-an-api-key
-var key = "yAyH8cJEzor6tU5Kl6iLxnNnqLunMUq9jpy9rES4";
+var key = 'yAyH8cJEzor6tU5Kl6iLxnNnqLunMUq9jpy9rES4';
 
 //URL for NASA's API
-var url = "https://api.nasa.gov/neo/rest/v1/feed?start_date=" + date + "&api_key=" + key;
+var url = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=' + date + '&api_key=' + key;
 
 //Fetch call to get JSON data
 fetch(url).then(function(response) {
@@ -48,7 +48,7 @@ function placeAsteroid(hazardous, distance, speed, size) {
   
   var solarSystem = document.getElementById('solar-system');
   append(solarSystem, asteroid);
-  // asteroid.addEventListener("click", boom);
+  
   destroyAsteroid(asteroid);
 }
 
@@ -101,13 +101,14 @@ function append(parent, el) {
 //This function add an listens for the click event
 //and runs the boom function
 function destroyAsteroid(asteroid) {
-  asteroid.addEventListener("click", boom);
+  asteroid.addEventListener('click', boom);
   return asteroid;
 }
 
 //this function replaces the text content in the asteroid node 
 //with 'BOOM!!' on a click event
 function boom() {
-  this.textContent = "BOOM!!";
+  this.textContent = 'BOOM!!';
+  this.className += ' boom';
   return this;
 } 
