@@ -2,9 +2,19 @@ var dateForm = document.getElementById('date-form');
 
 dateForm.addEventListener('submit', function(event){
 	event.preventDefault();
+	removeElementsByClass('asteroid');
 	var date = dateForm.elements['date'].value;
-	var solarSystem
-
+	// Error handling for date
+	var regex = /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/;
+	var click = document.getElementById('click');
+	if ( date.match(regex) && date.substr(0,4) > 1950 ){
+		click.textContent = 'Click on an asteroid to blow it up!';
+	} else if ( date.substr(0,4) < 1951 ){
+		click.textContent = 'Please enter a date later than 1951.';
+	}
+	else {
+		click.textContent = 'Try entering a valid date: YYYY-MM-DD.';
+	}
 	//Get an API key from https://api.nasa.gov/index.html#apply-for-an-api-key
 	var key = 'yAyH8cJEzor6tU5Kl6iLxnNnqLunMUq9jpy9rES4';
 	
@@ -17,7 +27,6 @@ dateForm.addEventListener('submit', function(event){
 	}).then(function(json) {
 		//Access the asteroid data of the JSON
 		var asteroids = json.near_earth_objects[date];
-	  
 		//Iterate through the data 
 		asteroids.map(function(element){
 			//Access the distance, speed, size and hazard data for each asteroid
@@ -25,30 +34,24 @@ dateForm.addEventListener('submit', function(event){
 			var speed = element.close_approach_data[0].relative_velocity.kilometers_per_hour;
 			var size = element.estimated_diameter.meters.estimated_diameter_max;
 			var hazardous = element.is_potentially_hazardous_asteroid;
-	    
 			//What does the data look like?
 			console.log('Hazard: ' + hazardous + '\n' + 
-	                'Distance: ' + distance + ' km\n' +
-	                'Speed: ' + speed + ' km/h \n' +
-	                'Size: ' + size + ' m');
-	    
+									'Distance: ' + distance + ' km\n' +
+									'Speed: ' + speed + ' km/h \n' +
+									'Size: ' + size + ' m');
 			//Place each asteroid on the page            
 			placeAsteroid(hazardous, distance, speed, size);
 		});
 	});
-	var regex = /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/
-	var click = document.getElementById('click');
-	if ( date.match(regex) && date.substr(0,4) > 1950 ){
-		// console.log(date.substr(0,4));
-		click.textContent = 'Click on an asteroid to blow it up!'
-	} else if ( date.substr(0,4) < 1951 ){
-		click.textContent = 'Please enter a date later than 1951.'
-	}
-		else {
-		click.textContent = 'Try entering a valid date: YYYY-MM-DD.'
-	}
 });
 
+// Remove elements by class name
+function removeElementsByClass(className){
+    var elements = document.getElementsByClassName(className);
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
 
 //This function creates each asteroid,
 //sets the distance, speed, size and hazard,
