@@ -134,8 +134,10 @@ function append(parent, el) {
 //This function add an listens for the click event
 //and runs the boom function
 function destroyAsteroid(asteroid) {
-	asteroid.addEventListener('click', boom);
-	return asteroid;
+	if ( asteroid.textContent.length > 0 )
+		asteroid.addEventListener('click', boom);
+		return asteroid;
+	}
 }
 
 //this function replaces the text content in the asteroid node 
@@ -146,7 +148,7 @@ function boom() {
 	var that = this;
 	var op = 100
 	var fade = setInterval(function(){
-		if ( op === 0) {
+		if ( op === 0 ) {
 			that.textContent = '';
 			clearInterval(fade);
 		} else {
