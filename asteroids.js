@@ -140,6 +140,8 @@ function destroyAsteroid(asteroid) {
 //this function replaces the text content in the asteroid node 
 //with 'BOOM!!' on a click event
 function boom() {
+	string = this.style.fontSize;
+	size = string.replace('px', '');
 	this.style.width = (size * 5)  + 'px';
 	this.style.height = (size * 7) + 'px';
 	this.textContent = 'BOOM!!!';
@@ -155,4 +157,5 @@ function boom() {
 			op -= 1;
 		}
 	}, 20)
+	this.removeEventListener('click', boom);
 } 
