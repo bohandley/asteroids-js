@@ -69,7 +69,7 @@ function removeElementsByClass(className){
 //then appends each asteroid to the Solar System
 function placeAsteroid(hazardous, distance, speed, size) {
 	var asteroid = document.createElement('a');
-	asteroid.textContent = '*';
+	asteroid.textContent = '*      ';
 	asteroid.className += 'asteroid';
   
 	setSpeed(asteroid, speed);
@@ -139,7 +139,7 @@ function destroyAsteroid(asteroid) {
 //this function replaces the text content in the asteroid node 
 //with 'BOOM!!' on a click event
 function boom() {
-	this.textContent = 'BOOM!!';
+	this.textContent = 'BOOM!!!';
 	this.className += ' boom';
 	var that = this;
 	var op = 100
