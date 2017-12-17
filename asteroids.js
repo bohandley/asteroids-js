@@ -99,7 +99,7 @@ function setSize(asteroid, size) {
 		size = size/10;
 	}
 	asteroid.style.fontSize = size + 'px';
-	asteroid.style.width = (size * 6)  + 'px';
+	asteroid.style.width = (size * 5)  + 'px';
 	asteroid.style.height = (size * 7) + 'px';
 	return asteroid;
 }
@@ -145,9 +145,13 @@ function boom() {
 	this.className += ' boom';
 	var that = this;
 	var op = 100
-	setInterval(function(){
-		that.style.opacity = op/100;
-		op -= 1;
+	var fade = setInterval(function(){
+		if ( op === 0) {
+			clearInterval(fade);
+		} else {
+			that.style.opacity = op/100;
+			op -= 1;
+		}
 	}, 20)
 
 	
