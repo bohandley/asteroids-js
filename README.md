@@ -1,6 +1,9 @@
 # Asteroids
 
-Using only JavaScript, call NASA's API and create a visualization of the near Earth asteroids. We access size, speed, distance, and hazardousness from NASA to create each asteroid. Click on the asteroids to save Earth!
+Using only JavaScript, call NASA's Near Earth Object Web Services and create a visualization of a collection of asteroids for a specific date. We access size, speed, distance, and hazardousness from NASA to create each asteroid. Click on the asteroids to save Earth!
+
+Updated 12/16/2017 - Deployed to Heroku!
+Click here => [https://asteroids-js-bjo.herokuapp.com/index.html](https://asteroids-js-bjo.herokuapp.com/index.html)
 
 This software was designed for WatzThis? as an educational lab to explore JavaScript functions and API calls. This lab purposefully does not include any JavaScript libraries.
 
