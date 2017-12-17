@@ -147,14 +147,11 @@ function boom() {
 	var op = 100
 	var fade = setInterval(function(){
 		if ( op === 0) {
+			that.textContent = '';
 			clearInterval(fade);
 		} else {
 			that.style.opacity = op/100;
 			op -= 1;
 		}
 	}, 20)
-
-	
-
-	return this;
 } 
