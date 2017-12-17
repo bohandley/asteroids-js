@@ -141,5 +141,14 @@ function destroyAsteroid(asteroid) {
 function boom() {
 	this.textContent = 'BOOM!!';
 	this.className += ' boom';
+	var that = this;
+	var op = 100
+	setInterval(function(){
+		that.style.opacity = op/100;
+		op -= 1;
+	}, 20)
+
+	
+
 	return this;
 } 
