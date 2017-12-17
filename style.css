@@ -28,8 +28,8 @@ body {
 
 .asteroid {
   position: absolute;
-  width: 5%;
-  height: 5%;
+  width: 100px;
+  height: 100px;
   overflow: hidden;
   margin-top: 240px;
   margin-left: 0px;
