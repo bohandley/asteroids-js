@@ -137,6 +137,8 @@ function destroyAsteroid(asteroid) {
 	if ( asteroid.textContent.length > 0 )
 		asteroid.addEventListener('click', boom);
 		return asteroid;
+	} else {
+		return asteroid;
 	}
 }
 
