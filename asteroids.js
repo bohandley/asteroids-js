@@ -99,6 +99,8 @@ function setSize(asteroid, size) {
 		size = size/10;
 	}
 	asteroid.style.fontSize = size + 'px';
+	asteroid.style.width = size + 'px';
+	asteroid.style.height = size + 'px';
 	return asteroid;
 }
 
