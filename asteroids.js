@@ -79,8 +79,9 @@ function placeAsteroid(hazardous, distance, speed, size) {
   
 	var solarSystem = document.getElementById('solar-system');
 	append(solarSystem, asteroid);
-  
-	destroyAsteroid(asteroid);
+  if ( asteroid.textContent.length > 0 ) {
+		destroyAsteroid(asteroid);
+	}
 }
 
 //This function sets the distance of
@@ -134,12 +135,8 @@ function append(parent, el) {
 //This function add an listens for the click event
 //and runs the boom function
 function destroyAsteroid(asteroid) {
-	if ( asteroid.textContent.length > 0 )
 		asteroid.addEventListener('click', boom);
 		return asteroid;
-	} else {
-		return asteroid;
-	}
 }
 
 //this function replaces the text content in the asteroid node 
