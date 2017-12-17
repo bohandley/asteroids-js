@@ -100,6 +100,8 @@ function setSize(asteroid, size) {
 		size = size/10;
 	}
 	asteroid.style.fontSize = size + 'px';
+	asteroid.style.width = (size * 5)  + 'px';
+	asteroid.style.height = (size * 7) + 'px';
 	return asteroid;
 }
 
@@ -140,10 +142,6 @@ function destroyAsteroid(asteroid) {
 //this function replaces the text content in the asteroid node 
 //with 'BOOM!!' on a click event
 function boom() {
-	string = this.style.fontSize;
-	size = string.replace('px', '');
-	this.style.width = (size * 5)  + 'px';
-	this.style.height = (size * 7) + 'px';
 	this.textContent = 'BOOM!!!';
 	this.className += ' boom';
 	var that = this;
