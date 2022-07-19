@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="asteroids.js"></script>
+  
   <script src="fetch.js"></script>
   <meta charset="utf-8">
-  <meta name="description" content="FetchAsteroidz">
+  <meta name="description" content="asteroids-js-bjo">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" type="text/css" href="style.css">
   <title>Asteroids</title>
 </head>
 <body>
+  <form id="date-form">
+    <p>Enter a date to display a collection of near earth objects from NASA's NeoWs</p>
+    <input type='date' name='date' value='2017-12-21'></input>
+    <input type="submit" name="Submit">
+  </form>
   <div id="solar-system">
     <span><img id="earth" src="images/earth.jpg"></span>
   </div>
+  <p id="click"></p>
+  <script src="asteroids.js"></script>
 </body>
 </html>
